@@ -22,7 +22,7 @@ export default class MapWithClustering extends Component {
             region: props.region || props.initialRegion,
             previousRegion: props.region || props.initialRegion,
         };
-        this.superCluster = Symbol('superCluster');
+        this.superCluster = {};
     }
 
     componentWillMount() {
