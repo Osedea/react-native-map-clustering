@@ -38,6 +38,13 @@ export default class CustomMarker extends Component {
     }
 
     handlePress = ()=>{
+        const pointCount = this.props.properties.point_count;
+        const clusterId = this.props.properties.cluster_id;
+        let markers = GLOBAL[this.props.superCluster].getLeaves(clusterId);
+        const coordinates = {
+            longitude: this.props.geometry.coordinates[0],
+            latitude: this.props.geometry.coordinates[1]
+        };
         if (!markers) {
             markers = GLOBAL[this.props.superCluster].getLeaves(clusterId);
         }
